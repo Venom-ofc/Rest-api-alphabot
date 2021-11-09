@@ -377,15 +377,15 @@ button1:hover {
             <a class="collapse-item" href="api/textmaker?text=Api&text2=Venom&text3=Rest&theme=google-suggestion&apikey=Sua_Key">Google Suggestion</a>
             <a class="collapse-item" href="api/textmaker/game?text=Api&text2=Venom&theme=pubg&apikey=Sua_Key">PUBG</a>
             <a class="collapse-item" href="api/textmaker/game?text=Api&text2=Venom&theme=battlefield&apikey=Sua_Key">Campo de batalha</a>
-            <a class="collapse-item" href="api/textmaker/senja?text=Venomapi&theme=coffee-cup&apikey=Alphabot">Xícara de café</a>
-            <a class="collapse-item" href="api/textmaker/senja?text=Venomapi&theme=coffee-cup2&apikey=Alphabot">Xícara de café 2</a>
-            <a class="collapse-item" href="api/textmaker/metallic?text=Venomapi&theme=neon&apikey=Alphabot">Neon</a>
-            <a class="collapse-item" href="api/textmaker/metallic?text=Venomapi&theme=glow&apikey=Alphabot">Brilho</a>
-            <a class="collapse-item" href="api/textmaker/alam?text=Venomapi&theme=summer&apikey=Alphabot">Verão</a>
-            <a class="collapse-item" href="api/textmaker/alam?text=Venomapi&theme=flower&apikey=Alphabot">Flor</a>
-            <a class="collapse-item" href="api/textmaker/random?text=Venomapi&theme=text-burn&apikey=Alphabot">Text Burn</a>
-            <a class="collapse-item" href="api/textmaker/random?text=Venomapi&theme=art-quote&apikey=Alphabot">Art Quote</a>
-            <a class="collapse-item" href="api/textmaker/roses?text=Venomapi&theme=wooden-boarch&apikey=Alphabot">Alpendre de Madeira</a>
+            <a class="collapse-item" href="api/textmaker/senja?text=Venomapi&theme=coffee-cup&apikey=Sua_Key">Xícara de café</a>
+            <a class="collapse-item" href="api/textmaker/senja?text=Venomapi&theme=coffee-cup2&apikey=Sua_Key">Xícara de café 2</a>
+            <a class="collapse-item" href="api/textmaker/metallic?text=Venomapi&theme=neon&apikey=Sua_Key">Neon</a>
+            <a class="collapse-item" href="api/textmaker/metallic?text=Venomapi&theme=glow&apikey=Sua_Key">Brilho</a>
+            <a class="collapse-item" href="api/textmaker/alam?text=Venomapi&theme=summer&apikey=Sua_Key">Verão</a>
+            <a class="collapse-item" href="api/textmaker/alam?text=Venomapi&theme=flower&apikey=Sua_Key">Flor</a>
+            <a class="collapse-item" href="api/textmaker/random?text=Venomapi&theme=text-burn&apikey=Sua_Key">Text Burn</a>
+            <a class="collapse-item" href="api/textmaker/random?text=Venomapi&theme=art-quote&apikey=Sua_Key">Art Quote</a>
+            <a class="collapse-item" href="api/textmaker/roses?text=Venomapi&theme=wooden-boarch&apikey=Sua_Key">Alpendre de Madeira</a>
             <a class="collapse-item" href="api/textmaker/roses?text=Venomapi&theme=golden&apikey=Sua_Key">Rosas Douradas</a>
           </div>
         </div>
@@ -1153,7 +1153,7 @@ button1:hover {
 <script>
   function getvisitor(){
               var xhr = new XMLHttpRequest();
-              var url = 'https://api.countapi.xyz/hit/api-alphabot.herokuapp.com/visits';
+              var url = 'https://api.countapi.xyz/hit/api-venom.herokuapp.com/visits';
               xhr.onloadend = function(){
              data = JSON.parse(this.responseText);
   document.getElementById("visitor").textContent = data.value
@@ -1266,15 +1266,15 @@ const check_match = () => {
 const check_for_winner = () => {
   let res = check_match()
   if (res == player) {
-    winner.innerText = "You Win Apikey: Alphabot";
+    winner.innerText = "Você ganhou a chave de API: Api-Venom";
     winner.classList.add("playerWin");
     board_full = true
   } else if (res == computer) {
-    winner.innerText = "Awokawok Kalah Ama Komputer:v";
+    winner.innerText = "você perde para o computador:v";
     winner.classList.add("computerWin");
     board_full = true
   } else if (board_full) {
-    winner.innerText = "Draw!";
+    winner.innerText = "Empate!";
     winner.classList.add("draw");
   }
 };
