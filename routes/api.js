@@ -312,7 +312,7 @@ router.get('/cewe/thailand', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	author: 'Venomo',
+             	author: 'Venom',
                  result
              })
          })
@@ -384,7 +384,7 @@ router.get('/cewe/japan', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	author: 'Venon',
+             	author: 'Venom',
                  result
              })
          })
@@ -544,7 +544,7 @@ router.get('/asupan/bocil', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -565,7 +565,7 @@ router.get('/asupan/ghea', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -2671,7 +2671,7 @@ router.get('/news/cnn', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -2694,7 +2694,7 @@ router.get('/news/cnbc', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -2717,7 +2717,7 @@ router.get('/news/republika', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -2740,7 +2740,7 @@ router.get('/news/tempo', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -2763,7 +2763,7 @@ router.get('/news/antara', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -2784,7 +2784,7 @@ router.get('/news/kumparan', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -2807,7 +2807,7 @@ router.get('/filmapik/search', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -2830,7 +2830,7 @@ router.get('/filmapik/kategori', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -2853,7 +2853,7 @@ router.get('/filmapik/play', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -2874,7 +2874,7 @@ router.get('/filmapik/terbaru', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -2897,7 +2897,7 @@ router.get('/lk21/search', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -2918,7 +2918,7 @@ router.get('/lk21/terbaru', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -2939,7 +2939,7 @@ router.get('/lk21/comingsoon', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -2960,7 +2960,7 @@ router.get('/lk21/tvseries', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -2983,7 +2983,7 @@ router.get('/lk21/year', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3006,7 +3006,7 @@ router.get('/lk21/country', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3029,7 +3029,7 @@ router.get('/lk21/genre', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3226,7 +3226,7 @@ router.get('/yutub/video', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3249,7 +3249,7 @@ router.get('/yutub/audio', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3272,7 +3272,7 @@ router.get('/ig/stalk', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3295,7 +3295,7 @@ router.get('/maker', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3318,7 +3318,7 @@ router.get('/maker2', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3339,7 +3339,7 @@ router.get('/github/stalk', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3360,7 +3360,7 @@ router.get('/repository/stalk', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3383,7 +3383,7 @@ router.get('/maker3', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3406,7 +3406,7 @@ router.get('/maker4', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3429,7 +3429,7 @@ router.get('/maker3d', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3452,7 +3452,7 @@ router.get('/maker3d/no2', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3475,7 +3475,7 @@ router.get('/maker3d/no3', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3498,7 +3498,7 @@ router.get('/maker3d/no4', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3521,7 +3521,7 @@ router.get('/yutub/search', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3544,7 +3544,7 @@ router.get('/maker/special/transformer', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
@@ -3567,7 +3567,7 @@ router.get('/maker/special/epep', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-             	author: 'Zeeone',
+             	author: 'Venom',
                  result
              })
          })
