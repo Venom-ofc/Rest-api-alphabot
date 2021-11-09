@@ -1192,12 +1192,12 @@ document.getElementById("jam").innerHTML = tanggal.getHours()+":"+tanggal.getMin
 					var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 					// Menampilkan Hasil Di Dalam element Menggunakan id="time"
-					document.getElementById("time").innerHTML = days + "Hari  " + hours + "Jam " + minutes + "Menit " + seconds + "Detik ";
+					document.getElementById("time").innerHTML = days + "Dia  " + hours + "Hora " + minutes + "Minuto " + seconds + "Segundos ";
 
 					// Ketika countdown timer sudah berakhir Maka Tulisan Berakhir
 					if (distance < 0) {
 						clearInterval(x);
-						document.getElementById("time").innerHTML = "Berakhir";
+						document.getElementById("time").innerHTML = "Fim";
 					}
 				}, 1000);
 			</script>
