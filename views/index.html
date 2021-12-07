@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:image" content="https://i.ibb.co/84WVRZ8/20211109-062621.jpg" /> 
+
+<meta property="og:title" content="Venom - APIs" /> <meta property="og:description" content="Made By Me ᴹᴿ᭄Venomㄙ "/> 
+
+<link rel="shortcut icon" href="https://i.ibb.co/84WVRZ8/20211109-062621.jpg" type="image/x-icon" />
+
+  <title>Venom - Rest Api's</title>
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="css/ruang-admin.min.css" rel="stylesheet">
+<audio autoplay="autoplay" hidden="hidden" src="https://l.top4top.io/m_2045clld21.mp3"></audio>
+</head>
+<style>
+  .bg-orange {
+      background-color: #c3cf0f;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #ffa426), to(#dda20a));
+  background-image: linear-gradient(180deg, #dd7009 10%, #ee7708 100%);
+  background-size: cover
+}
+
+.border-right-warning {
+  border-right: .25rem solid #ffeb3b !important
+}
+
+.border-top-warning {
+  border-top: .25rem solid #ffeb3b !important
+}
+
+.animated {
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #FF0000;
+	-webkit-animation: animatedBackground_c 2s infinite alternate;
+}
+@keyframes animatedBackground_c {
+	0% {-webkit-text-stroke-color: #ff8b00}
+	10% {-webkit-text-stroke-color: #e8ff00}
+	20% {-webkit-text-stroke-color: #5dff00}
+	30% {-webkit-text-stroke-color: #00ff2e}
+	40% {-webkit-text-stroke-color: #00ffb9}
+	50% {-webkit-text-stroke-color: #00b9ff}
+	60% {-webkit-text-stroke-color: #002eff}
+	70% {-webkit-text-stroke-color: #5d00ff}
+	80% {-webkit-text-stroke-color: #e800ff}
+	90% {-webkit-text-stroke-color: #ff008b}
+	100% {-webkit-text-stroke-color: #ff0000}
+}
+
+
+.img-gg {
+  width: 165px;
+  height: 165px; 
+ border: 3px solid #e3eaef}
+  
+  h7, .h7 {
+  font-size: 0.7rem; }
+  
+  .font-gg {
+  	font-size: 40px
+  }
+
+.rainbow {
+  background: linear-gradient(
+    to right, 
+    #A6CE37, #ECE71C, #0FC6E6, #F95D44, #816271, #9F1958, #081B6A, #59D7EE);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 800px;
+  background-position: center 0%;
+  animation: background-slide 25s infinite linear;
+}
+
+@keyframes background-slide {
+  100% {
+    background-position: 8160px;
+  }
+}
+
+.bg-gray-dark {
+  background: #e3eaef; }
+  
+   
+
+
+
+
+.container1 {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+h11 {
+  font-size: 5rem;
+  margin-bottom: 0.5em;
+}
+
+h21 {
+  margin-top: 1em;
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+}
+
+.play-area {
+	background-color: #e3eaef;
+  display: grid;
+  width: 300px;
+  height: 300px;
+  grid-template-columns: auto auto auto;
+}
+
+.block {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  border: 3px solid black;
+  transition: background 0.2s ease-in-out;
+}
+
+.block:hover {
+  cursor: pointer;
+  background: #0ff30f;
+}
+
+.occupied:hover {
+  background: #ff3a3a;
+}
+
+.win {
+  background: #0ff30f;
+}
+
+.win:hover {
+  background: #0ff30f;
+}
+
+#block_0,
+#block_1,
+#block_2 {
+  border-top: none;
+}
+
+#block_0,
+#block_3,
+#block_6 {
+  border-left: none;
+}
+
+#block_6,
+#block_7,
+#block_8 {
+  border-bottom: none;
+}
+
+#block_2,
+#block_5,
+#block_8 {
+  border-right: none;
+}
+
+button1 {
+  outline: none;
+  border: 4px solid green;
+  padding: 8px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: none;
+  transition: all 0.2s ease-in-out;
+}
+
+button1:hover {
+  cursor: pointer;
+  background: green;
+  color: white;
+}
+
+.playerWin {
+  color: blue;
+}
+
+.computerWin {
+  color: red;
+}
+
+.draw {
+  color: orangered;
+}
+
+@media only screen and (max-width: 600px) {
+
+  h11 {
+    font-size: 3rem;
+    margin-bottom: 0.5em;
+  }
+
+  h21 {
+    margin-top: 1em;
+    font-size: 1.3rem;
+  }
+}
+
+</style>
+
+<body id="page-top" onload="getvisitor();">
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <div class="sidebar-brand-icon">
+        	<img src="https://i.ibb.co/84WVRZ8/20211109-062621.jpg">
+        </div>
+        <div class="sidebar-brand-text mx-3">Venom - Api</div>
+      </a>
+      <hr class="sidebar-divider my-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">
+          <i class="fas fa-fire"></i>
+          <span>All Api's</span></a>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        API Features
+      </div>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
+          aria-expanded="true" aria-controls="collapseBootstrap">
+          <i class="fas fa-download"></i>
+          <span>Mídia social</span>
+        </a>
+        <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Recursos de mídia</h6>
+            <a class="collapse-item" href="api/yutub/video?url=https://youtu.be/v0ej6EJGqos&apikey=Sua_Key">Vídeos do YouTube</a>
+            <a class="collapse-item" href="api/yutub/audio?url=https://youtu.be/v0ej6EJGqos&apikey=Sua_Key">Musicas do YouTube</a>
+            <a class="collapse-item" href="api/yutub/search?video=Ustadz Abdul Somad&apikey=Sua_Key">Pesquisa no YouTube</a>
+            <a class="collapse-item" href="api/fbdown/?url=LOGIN_URL&apikey=Sua_Key">Facebook</a>
+            <a class="collapse-item" href="api/tiktod/?url=LOGIN_URL&apikey=Sua_Key">Tiktok</a>
+            <h6 class="collapse-header">Características do Stalker</h6>
+            <a class="collapse-item" href="api/tiktod/stalk/?username=NOME DE USUÁRIO DE LOGIN&apikey=Sua_Key"></a>
+            <a class="collapse-item" href="api/ig/stalk?username=Venomofc&apikey=Sua_Key">Instagram Stalk</a>
+            <a class="collapse-item" href="api/github/stalk?username=Venom-ofc&apikey=Sua_Key">Github Stalk</a>
+            <a class="collapse-item" href="api/repository/stalk?username=api-venom&apikey=Sua_Key">Repositório Stalk</a>
+            </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseIslamic" aria-expanded="true"
+          aria-controls="collapseIslamic">
+          <i class="fas fa-star-and-crescent"></i>
+          <span>Islâmica</span>
+        </a>
+        <div id="collapseIslamic" class="collapse" aria-labelledby="headingIslamic" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Características islâmicas</h6>
+            <a class="collapse-item" href="api/hadits?kitab=bukhari&nomor=52&apikey=Sua_Key">Sahih Hadith</a>
+            <a class="collapse-item" href="api/quran?surah=1&ayat=2&apikey=Sua_Key">Alcorão</a>
+            <a class="collapse-item" href="api/muslim/tahlil?apikey=Sua_Key">Oração Tahlil</a>
+            <a class="collapse-item" href="api/muslim/wirid?apikey=Sua_Key">Oração Wirid</a>
+            <a class="collapse-item" href="api/muslim/asmaulhusna?apikey=Sua_Key">Asmaul Husna</a>
+            <a class="collapse-item" href="api/muslim/doaharian?apikey=Sua_Key">Oração Diária</a>
+            <a class="collapse-item" href="api/muslim/ayatkursi?apikey=Sua_Key">O verso do trono</a>
+            <a class="collapse-item" href="api/kisahnabi?nabi=muhammad&apikey=Sua_Key">A História do Profeta</a>
+            <a class="collapse-item" href="api/muslim/niatshalat?apikey=Sua_Key">Intenção de Oração</a>
+            <a class="collapse-item" href="api/muslim/bacaanshalat?apikey=Sua_Key">Leitura de Oração</a>
+           <!-- <a class="collapse-item" href="api/jadwalshalat?kota=jakartautara&apikey=Alphabot">Jadwal Shalat</a> -->
+          </div>
+        </div>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseKodepos" aria-expanded="true"
+          aria-controls="collapseKodepos">
+          <i class="fas fa-images"></i>
+          <span>Imagens</span>
+        </a>
+        <div id="collapseKodepos" class="collapse" aria-labelledby="headingKodepos" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Características da imagem</h6>
+            <a class="collapse-item" href="api/wallpaper/teknologi?apikey=Sua_Key">Papéis de parede de tecnologia</a>
+            <a class="collapse-item" href="api/wallpaper/programming?apikey=Sua_Key">Papéis de parede de programação</a>
+            <a class="collapse-item" href="api/wallpaper/cyberspace?apikey=Sua_Key">Papel de parede do CyberSpace</a>
+            <a class="collapse-item" href="api/wallpaper/muslim?apikey=Sua_Key">Papéis de parede muçulmanos</a>
+            <a class="collapse-item" href="api/wallpaper/pegunungan?apikey=Sua_Key">Papéis de parede de Mountain View</a>
+            </div>
+            </div>
+            </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGithub"
+          aria-expanded="true" aria-controls="collapseGithub">
+          <i class="fas fa-random"></i>
+          <span>Aleatória</span>
+        </a>
+        <div id="collapseGithub" class="collapse" aria-labelledby="headingGithub" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Características Aleatórias</h6>
+            <a class="collapse-item" href="api/randomquote?apikey=Sua_Key">Citações</a>
+            <a class="collapse-item" href="api/randomquote/muslim?apikey=Sua_Key">Citações islâmicas</a>
+            <a class="collapse-item" href="api/quotes/kanye?apikey=Sua_Key">Citações kanye</a>
+            <a class="collapse-item" href="api/random/asmaulhusna?apikey=Sua_Key">Asmaul Husna</a>
+            <a class="collapse-item" href="api/random/meme?apikey=Sua_Key">Meme</a>
+            <a class="collapse-item" href="api/random/wallpaper?apikey=Sua_Key">Papeis de parede</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMaker"
+          aria-expanded="true" aria-controls="collapseMaker">
+          <i class="fas fa-images"></i>
+          <span>Criador texto 2D</span>
+        </a>
+        <div id="collapseMaker" class="collapse" aria-labelledby="headingMaker" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Criador texto 2D  Recursos</h6>
+            <a class="collapse-item" href="api/maker?text=Api-Venom&apikey=Sua_Key">Criador 1</a>
+            <a class="collapse-item" href="api/maker2?text=Api-Venom&apikey=Sua_Key">Criador 2</a>
+            <a class="collapse-item" href="api/maker3?text=Api-Venom&apikey=Sua_Key">Criador 3</a>
+            <a class="collapse-item" href="api/maker4?text=Api-Venom&apikey=Sua_Key">Criador 4</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMaker3D"
+          aria-expanded="true" aria-controls="collapseMaker3D">
+          <i class="fas fa-images"></i>
+          <span>Criador texto 3D</span>
+        </a>
+        <div id="collapseMaker3D" class="collapse" aria-labelledby="headingMaker3D" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Criador texto 3D Recursos</h6>
+            <a class="collapse-item" href="api/maker3d?text=Api-Venom&apikey=Sua_Key">Criador 1</a>
+            <a class="collapse-item" href="api/maker3d/no2?text=Api-Venom&apikey=Sua_Key">Criador 2</a>
+            <a class="collapse-item" href="api/maker3d/no3?text=Api-Venom&apikey=Sua_Key">Criador 3</a>
+            <a class="collapse-item" href="api/maker3d/no4?text=Api-Venom&apikey=Sua_Key">Criador 4</a>
+            <a class="collapse-item" href="api/maker3d/no5?text=Api-Venom&apikey=Sua_Key">Criador 5</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMakerOther"
+          aria-expanded="true" aria-controls="collapseMakerOther">
+          <i class="fas fa-images"></i>
+          <span>texto maker Outros</span>
+        </a>
+        <div id="collapseMakerOther" class="collapse" aria-labelledby="headingMakerOther" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">texto maker outros Recursos</h6>
+            <a class="collapse-item" href="api/maker/special/transformer?text=Api-Venom&apikey=Sua_Key">Transformer</a>
+            <a class="collapse-item" href="api/maker/special/epep?text=Venomapi&apikey=Sua_Key">Certificado Epep.</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseText" aria-expanded="true"
+          aria-controls="collapseText">
+          <i class="fas fa-images"></i>
+          <span>Photooxy</span>
+        </a>
+        <div id="collapseText" class="collapse" aria-labelledby="headingText" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Photooxy Recursos</h6>
+            <a class="collapse-item" href="api/textmaker?text=Api&text2=Venom&theme=glitch&apikey=Sua_Key">falha</a>
+            <a class="collapse-item" href="api/textmaker?text=Api&text2=Venom&text3=Rest&theme=google-suggestion&apikey=Sua_Key">Google Suggestion</a>
+            <a class="collapse-item" href="api/textmaker/game?text=Api&text2=Venom&theme=pubg&apikey=Sua_Key">PUBG</a>
+            <a class="collapse-item" href="api/textmaker/game?text=Api&text2=Venom&theme=battlefield&apikey=Sua_Key">Campo de batalha</a>
+            <a class="collapse-item" href="api/textmaker/senja?text=Venomapi&theme=coffee-cup&apikey=Sua_Key">Xícara de café</a>
+            <a class="collapse-item" href="api/textmaker/senja?text=Venomapi&theme=coffee-cup2&apikey=Sua_Key">Xícara de café 2</a>
+            <a class="collapse-item" href="api/textmaker/metallic?text=Venomapi&theme=neon&apikey=Sua_Key">Neon</a>
+            <a class="collapse-item" href="api/textmaker/metallic?text=Venomapi&theme=glow&apikey=Sua_Key">Brilho</a>
+            <a class="collapse-item" href="api/textmaker/alam?text=Venomapi&theme=summer&apikey=Sua_Key">Verão</a>
+            <a class="collapse-item" href="api/textmaker/alam?text=Venomapi&theme=flower&apikey=Sua_Key">Flor</a>
+            <a class="collapse-item" href="api/textmaker/random?text=Venomapi&theme=text-burn&apikey=Sua_Key">Text Burn</a>
+            <a class="collapse-item" href="api/textmaker/random?text=Venomapi&theme=art-quote&apikey=Sua_Key">Art Quote</a>
+            <a class="collapse-item" href="api/textmaker/roses?text=Venomapi&theme=wooden-boarch&apikey=Sua_Key">Alpendre de Madeira</a>
+            <a class="collapse-item" href="api/textmaker/roses?text=Venomapi&theme=golden&apikey=Sua_Key">Rosas Douradas</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAnime" aria-expanded="true"
+          aria-controls="collapseAnime">
+          <i class="fas fa-tv"></i>
+          <span>Anime</span>
+        </a>
+        <div id="collapseAnime" class="collapse" aria-labelledby="headingAnime" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Recursos de anime/mangá</h6>
+            <a class="collapse-item" href="api/anime/kusonime?search=planetarian&apikey=Sua_Key">Kusonime</a>
+            <a class="collapse-item" href="api/manga?search=kimetsu no yaiba&apikey=Sua_Key">Manga</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAnime3" aria-expanded="true"
+          aria-controls="collapseAnime3">
+          <i class="fas fa-mug-hot"></i>
+          <span>Entrada na linha do tempo</span>
+        </a>
+        <div id="collapseAnime3" class="collapse" aria-labelledby="headingAnime" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Entrada na linha do tempo Recursos</h6>
+            <a class="collapse-item" href="api/asupan/tiktok?apikey=Sua_Key">Vídeos aleatórios de Tiktok</a>
+            <a class="collapse-item" href="api/asupan?apikey=Sua_Key">ingestão</a>
+		<a class="collapse-item" href="api/asupan/cecan?apikey=Sua_Key">Ingestão de cecan</a>
+
+            <a class="collapse-item" href="api/asupan/hijaber?apikey=Sua_Key">Ingestão de Hijaber</a>
+            <a class="collapse-item" href="api/asupan/santuy?apikey=Sua_Key">Ingestão de Santuy</a>
+            <a class="collapse-item" href="api/asupan/ukty?apikey=Sua_Key">Ukhty. Ingestão</a>
+            <a class="collapse-item" href="api/asupan/bocil?apikey=Sua_Key">Pequena entrada</a>
+            <a class="collapse-item" href="api/asupan/ghea?apikey=Sua_Key">Ingestão de ghea</a>
+            <a class="collapse-item" href="api/asupan/rikagusriani?apikey=Sua_Key">Ingestão de Rika</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAnime2" aria-expanded="true"
+          aria-controls="collapseAnime2">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span>NSFW</span>
+        </a>
+        <div id="collapseAnime2" class="collapse" aria-labelledby="headingAnime" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">NSFW Recursos</h6>
+            <a class="collapse-item" href="api/nsfw/ass?apikey=Sua_Key">Ass</a>
+            <a class="collapse-item" href="api/nsfw/ahegao?apikey=Sua_Key">Ahegao</a>
+            <a class="collapse-item" href="api/nsfw/bdsm?apikey=Sua_Key">Bdsm</a>
+            <a class="collapse-item" href="api/nsfw/blowjob?apikey=Sua_Key">Boquete</a>
+            <a class="collapse-item" href="api/nsfw/cuckold?apikey=Sua_Key">Corno</a>
+            <a class="collapse-item" href="api/nsfw/cum?apikey=Sua_Key">porra</a>
+            <a class="collapse-item" href="api/nsfw/ero?apikey=Sua_Key">Ero</a>
+            <a class="collapse-item" href="api/nsfw/femdom?apikey=Sua_Key">Dominação Feminina</a>
+            <a class="collapse-item" href="api/nsfw/foot?apikey=Sua_Key">Pé</a>
+            <a class="collapse-item" href="api/nsfw/gangbang?apikey=Sua_Key">Gangbang</a>
+            <a class="collapse-item" href="api/nsfw/glasses?apikey=Sua_Key">Copas</a>
+            <a class="collapse-item" href="api/nsfw/hentai?apikey=Sua_Key">Hentai</a>
+            <a class="collapse-item" href="api/nsfw/hentaigif?apikey=Sua_Key">Hentai (GIF)</a>
+            <a class="collapse-item" href="api/nsfw/jahy?apikey=Sua_Key">Jahy</a>
+            <a class="collapse-item" href="api/nsfw/masturbation?apikey=Sua_Key">masturbação</a>
+            <a class="collapse-item" href="api/nsfw/nsfwNeko?apikey=Sua_Key">Neko</a>
+            <a class="collapse-item" href="api/nsfw/orgy?apikey=Sua_Key">Orgia</a>
+            <a class="collapse-item" href="api/nsfw/panties?apikey=Sua_Key">Calcinhas</a>
+            <a class="collapse-item" href="api/nsfw/pussy?apikey=Sua_Key">Bichano</a>
+            <a class="collapse-item" href="api/nsfw/thighs?apikey=Sua_Key">Altos</a>
+            <a class="collapse-item" href="api/nsfw/yuri?apikey=Sua_Key"></a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGames" aria-expanded="true" aria-controls="collapseForm">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Jogos</span>
+                </a>
+                <div id="collapseGames" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+                    <div class="py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Jogos Recursos</h6>
+            <a class="collapse-item" href="/api/kuis/caklontong?apikey=Sua_Key">Cak Lontong</a>
+            <a class="collapse-item" href="/api/kuis/tebakgambar?apikey=Sua_Key">Adivinhe a imagem</a>
+            <a class="collapse-item" href="/api/kuis/family100?apikey=Sua_Key">Família 100</a>
+            </div>
+            </div>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGachaCewe" aria-expanded="true" aria-controls="collapseForm">
+                    <i class="fas fa-fire"></i>
+                    <span>Gacha Girl</span>
+                </a>
+                <div id="collapseGachaCewe" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+                    <div class="py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Gacha Girl Recursos</h6>
+            <a class="collapse-item" href="/api/cewe/vietnam?apikey=Sua_Key">Cecan vietnamita</a>
+            <a class="collapse-item" href="/api/cewe/malaysia?apikey=Sua_Key">Cecan da Malásia</a>
+            <a class="collapse-item" href="/api/cewe/korea?apikey=Sua_Key">Cecan coreano</a>
+            <a class="collapse-item" href="/api/cewe/Brasil?apikey=Sua_Key">Cecan do Brasil</a>
+            <a class="collapse-item" href="/api/cewe/japan?apikey=Sua_Key">Cecan da Japão</a>
+            <a class="collapse-item" href="/api/cewe/thailand?apikey=Sua_Key">Cecan da Tailândia</a>
+            <a class="collapse-item" href="/api/cewe/china?apikey=Sua_Key">Cecan da China</a>
+            </div>
+            </div>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFilmApik" aria-expanded="true" aria-controls="collapseForm">
+                    <i class="fas fa-film"></i>
+                    <span>MovieSlick</span>
+                </a>
+                <div id="collapseFilmApik" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+                    <div class="py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">MovieSlick Recursos</h6>
+            <a class="collapse-item" href="/api/filmapik/search?film=avenger&apikey=Sua_Key">Pesquisar Filmes</a>
+            <a class="collapse-item" href="/api/filmapik/kategori?film=action&apikey=Sua_Key">Pesquisar categoria de filmes</a>
+            <a class="collapse-item" href="/api/filmapik/terbaru?apikey=Sua_Key">Últimos Filmes</a>
+            <a class="collapse-item" href="/api/filmapik/play?id=142455&apikey=Sua_Key">Play Filmes</a>
+            </div>
+            </div>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLk21" aria-expanded="true" aria-controls="collapseForm">
+                    <i class="fas fa-film"></i>
+                    <span>Lk21</span>
+                </a>
+                <div id="collapseLk21" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+                    <div class="py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Lk21 Recursos</h6>
+            <a class="collapse-item" href="/api/lk21/search?film=avenger&apikey=Sua_Key">Pesquisar Filmes</a>
+            <a class="collapse-item" href="/api/lk21/terbaru?apikey=Sua_Key">Últimos Filmes</a>
+            <a class="collapse-item" href="/api/lk21/comingsoon?apikey=Sua_Key">Próximos filmes</a>
+            <a class="collapse-item" href="/api/lk21/tvseries?apikey=Sua_Key">Séries de TV</a>
+            <a class="collapse-item" href="/api/lk21/year?tahun=2021&apikey=Sua_Key">Por ano</a>
+            <a class="collapse-item" href="/api/lk21/country?negara=indonesia&apikey=Sua_Key">Por país</a>
+            <a class="collapse-item" href="/api/lk21/genre?tipe=action&apikey=Sua_Key">Por gênero</a>
+            </div>
+            </div>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNews" aria-expanded="true" aria-controls="collapseForm">
+                    <i class="fas fa-compass"></i>
+                    <span>Notícia</span>
+                </a>
+                <div id="collapseNews" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+                    <div class="py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Notícia Recursos</h6>
+            <a class="collapse-item" href="api/news">Tipo de Notícias</a>
+            <a class="collapse-item" href="api/news/cnn?type=TIPO_DE_NOTÍCIAS&apikey=Sua_Key">Notícias de cnn</a>
+            <a class="collapse-item" href="api/news/cnbc?type=TIPO_DE_NOTÍCIAS&apikey=Sua_Key">Notícias de CnBc</a>
+            <a class="collapse-item" href="api/news/republika?type=TIPO_DE_NOTÍCIAS&apikey=Sua_Key">Notícias de República</a>
+            <a class="collapse-item" href="api/news/tempo?type=TIPO_DE_NOTÍCIAS&apikey=Sua_Key">Notícias de Tempo</a>
+            <a class="collapse-item" href="api/news/antara?type=TIPO_DE_NOTÍCIAS&apikey=Sua_Key">Notícias de Entre</a>
+            <a class="collapse-item" href="api/news/kumparan?type=TIPO_DE_NOTÍCIAS&apikey=Sua_Key">Notícias de bobina</a>
+            </div>
+            </div>
+        </li>
+	    <li class="nav-item">
+
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGames1" aria-expanded="true" aria-controls="collapseForm">
+
+                    <i class="fas fa-lock"></i>
+
+                    <span>Encode & Decode</span>
+
+                </a>
+
+                <div id="collapseGames1" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+
+                    <div class="py-2 collapse-inner rounded">
+
+                        <h6 class="collapse-header">Encode & Decode Recursos</h6>
+
+            <a class="collapse-item" href="api/base?apikey=Sua_Key&type=base64&encode=VenomApi">Encode Base64</a>
+
+            <a class="collapse-item" href="api/base?apikey=Sua_Key&type=base64&decode=Q2hlZW1zR2FudGVuZw==">Decode Base64</a>
+
+            <a class="collapse-item" href="api/base?apikey=Sua_Key&type=base32&encode=VenomApi">Encode Base32</a>
+
+            <a class="collapse-item" href="api/base?apikey=Sua_Key&type=base32&decode=INUGKZLNONDWC3TUMVXGO===">Decode Base32</a>
+
+            </div>
+
+            </div>
+
+        </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseother" aria-expanded="true"
+          aria-controls="collapseother">
+          <i class="fas fa-folder-open"></i>
+          <span>Outras</span>
+        </a>
+        <div id="collapseother" class="collapse" aria-labelledby="headingother" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Outras Menu</h6>
+            <a class="collapse-item" href="api/nulis?text=Venom&apikey=Sua_Key">Escreva um livro</a>
+            <a class="collapse-item" href="api/infonpm?query=Zhirrr-api&hostname=Zhirrr&apikey=Sua_Key">Informações NPM</a>
+            <a class="collapse-item" href="api/infogempa?apikey=Sua_Key">Informações mais recentes sobre terremotos</a>
+            <a class="collapse-item" href="api/infocuaca?provinsi=jakarta&apikey=Sua_Key">Informações meteorológicas do Brasil</a>
+            <a class="collapse-item" href="api/infocuaca/dunia?apikey=Sua_Key">Informações sobre o clima mundial</a>
+            <a class="collapse-item" href="api/infocuaca/bandara?apikey=Sua_Key">Informações meteorológicas do aeroporto</a>
+            <a class="collapse-item" href="api/infotsunami?apikey=Sua_Key">Informações sobre tsunami</a>
+            <a class="collapse-item" href="api/covidindo?apikey=Sua_Key">Covid19</a>
+            <a class="collapse-item" href="api/covidworld?apikey=Sua_Key">Covid total</a>
+            <a class="collapse-item" href="api/short/tiny?url=google.com&apikey=Sua_Key">Links Curtos</a>
+            <a class="collapse-item" href="api/wikipedia?search=jembatan&apikey=Sua_Key">Wikipedia</a>
+            <a class="collapse-item" href="api/drakorasia?search=tale&apikey=Sua_Key">Drama Asiático</a>
+            <a class="collapse-item" href="api/fakedata?country=en&apikey=Sua_Key">Dados Falsos</a>
+            <a class="collapse-item" href="api/hilih?kata=aku kan ganteng banget&apikey=Sua_Key">Kata Hilih</a>
+            <a class="collapse-item" href="api/liriklagu?lagu=sayang&apikey=Sua_Key">letra da música</a>
+            <a class="collapse-item" href="api/chordlagu?lagu=sayang&apikey=Sua_Key">Acordes de música</a>
+            <a class="collapse-item" href="api/kbbi?kata=pohon&apikey=Sua_Key">KBBI</a>
+            <a class="collapse-item" href="api/kodepos?kota=jakarta&apikey=Sua_Key">Código postal</a>
+            <a class="collapse-item" href="api/translate?kata=hi&apikey=Sua_Key">Tradutor</a>
+            <a class="collapse-item" href="api/gabut?apikey=Sua_Key">Turfa</a>
+          </div>
+        </div>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+<div class="version"><b>Contate-me</b></div>
+      </div>
+      <li class="nav-item">
+          
+            <a class="nav-link collapsed" href="api/about">
+            <i class="fas fa-fw fa-info"></i>
+                    <span>Sobre esta web</span>
+            </a>
+      </li>
+      <li class="nav-item">
+          
+            <a class="nav-link collapsed" href="https://wa.me/qr/PWEODFL2VTUGC1">
+            <i class="fab fa-fw fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+            </a>
+      </li>
+    
+      <li class="nav-item">
+            <a class="nav-link collapsed" href="https://chat.whatsapp.com/LTyM3PdbIw3CyLmy0wF9EQ">
+            <i class="fab fa-fw fa-instagram"></i>
+                    <span>Grupo</span>
+            </a>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="https://wa.me/qr/QMN63PB7ZKFZM1">
+            <i class="fab fa-fw fa-telegram"></i>
+                    <span>Número do bot</span>
+            </a>
+      </li>
+       <li class="nav-item">
+            <a class="nav-link collapsed" href="https://youtube.com/channel/UCOoc5DOT_M6foZa1jSOI6JQ">
+            <i class="fab fa-fw fa-youtube"></i>
+                    <span>YouTube</span>
+            </a>
+      </li>
+      <li class="nav-item">
+            <a class="nav-link collapsed" href="https://github.com/Venom-ofc">
+            <i class="fab fa-fw fa-github"></i>
+                    <span>Github</span>
+            </a>
+      </li>
+       <li class="nav-item">
+            <a class="nav-link collapsed" href="https://apriza09.github.io/covid-id/">
+            <i class="fas fa-biohazard"></i>
+                    <span>Informações de Covid19</span>
+            </a>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="version"><b>Criado ♥️ By Venom</b></div>
+    </ul>
+    <!-- Sidebar -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- TopBar -->
+
+        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+          <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
+                <form class="navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-1 small" placeholder="O que você quer procurar?"
+                      aria-label="Search" aria-describedby="basic-addon2" style="border-color: #3f51b5;">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <span class="badge badge-danger badge-counter">3+</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                  Notificacion
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-primary">
+                      <i class="fas fa-bell text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">12 de Março de 2021</div>
+                    <span class="font-weight-bold">Esta api de descanso foi feita!</span>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-success">
+                      <i class="fas fa-exclamation-triangle text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">29 de Março de 2021</div>
+                    Este site tem alguns problemas !!!
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-warning">
+                      <i class="fas fa-file-alt text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">2 Maio de 2021</div>
+                    Este site está de volta como de costume ✨
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope fa-fw"></i>
+                <span class="badge badge-warning badge-counter">2</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Mensagem 
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://f.top4top.io/p_204536aed1.jpg" style="max-width: 60px" alt="">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div class="font-weight-bold">
+                    <div class="text-truncate">Beib❣️Vamos jogar ！！！.
+                     </div>
+                    <div class="small text-gray-500">Venom · 2s</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://k.top4top.io/p_2045sg8hc1.jpg" style="max-width: 60px" alt="">
+                    <div class="status-indicator bg-default"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Espere um minuto baby❣️meu celular esta baixo ...
+                    </div>
+                    <div class="small text-gray-500">Tifany · 1s</div>
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-tasks fa-fw"></i>
+                <span class="badge badge-success badge-counter">3</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  informações
+                </h6>
+                <a class="dropdown-item align-items-center" href="#">
+                  <div class="mb-3">
+                    <div class="small text-gray-500">Quer adicionar recursos
+                      <div class="small float-right"><b>50%</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </a>
+                <a class="dropdown-item align-items-center" href="#">
+                  <div class="mb-3">
+                    <div class="small text-gray-500">Preguiçoso para adicionar recursos
+                      <div class="small float-right"><b>50%</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 50%" aria-valuenow="50"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </a>
+                <a class="dropdown-item align-items-center" href="#">
+                  <div class="mb-3">
+                    <div class="small text-gray-500">eu sou um iniciante
+                      <div class="small float-right"><b>100%</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="https://www.instagram.com/zeeneofc">Ver todas as informações</a>
+              </div>
+            </li>
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <img class="img-profile rounded-circle" src="img/logo.jpg" style="max-width: 60px">
+                <span class="ml-2 d-none d-lg-inline text-white small"> ᴹᴿ᭄venomㄙ </span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="https://wa.me/qr/PWEODFL2VTUGC1">
+                  <i class="fab fa-fw fa-whatsapp"></i>
+                  Whatsapp on
+                </a>
+                <a class="dropdown-item" href="https://t.me/venom">
+                  <i class="fab fa-fw fa-telegram"></i>
+                  Telegram off
+                </a>
+                <a class="dropdown-item" href="https://www.instagram.com/venom">
+                  <i class="fab fa-fw fa-instagram"></i>
+                  Instagram off
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="https://api-venom.herokuapp.com/">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  sair
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <!-- Topbar -->  
+
+      <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Bem vindo</h1>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="./">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Bem vindo</li>
+            </ol>
+          </div>
+<div class="col-xl-3 col-md-6 mb-4">
+<div class="card h-100">
+<div class="card-body">
+<div class="row no-gutters align-items-center">
+<div class="col mr-2">
+<div class="text-xs font-weight-bold text-uppercase mb-1">Seu IP</div>
+<div class="h5 mb-0 font-weight-bold text-gray-800">
+<div id="findipwidget"></div><div class="findiplink" id="findipurl">Fonte : <a href="http://www.find-ip.net/" target="_blank">Daqui</a></div><script adiar src="https://api.find-ip.net/widget.js?width=240&bg=%23ffffff&border=white&textcol=grey&flag=0&"></script>
+</div>
+<div class="mt-2 mb-0 text-muted text-xs"> 
+</span>
+<span>Suas informações de IP</span>
+</div>
+</div>
+<div class="col-auto">
+</div>
+</div>
+</div>
+</div>
+</div>
+		    
+          <div class="col-xl-3 col-md-6 mb-4">
+<div class="card h-100">
+<div class="card-body">
+<div class="row align-items-center">
+<div class="col mr-2">
+<div class="text-xs font-weight-bold text-uppercase mb-1">Total de Api</div>
+<div class="h5 mb-0 font-weight-bold text-gray-800">Auto-verificação</div>
+<div class="mt-2 mb-0 text-muted text-xs">
+<span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 98.2%</span>
+<span>Desde o último mês</span>
+</div>
+</div>
+<div class="col-auto">
+<i class="fas fa-fire fa-2x text-primary"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-md-6 mb-4">
+
+<div class="card h-100">
+
+<div class="card-body">
+
+<div class="row no-gutters align-items-center">
+
+<div class="col mr-2">
+
+<div class="text-xs font-weight-bold text-uppercase mb-1">Tempo</div>
+
+<div class="h5 mb-0 font-weight-bold text-gray-800">
+
+<div class="jam" id="jam">00:00:00</div>
+
+</div>
+
+<div class="mt-2 mb-0 text-muted text-xs">
+
+</span>
+
+<span>Horário do Brasil Ocidental</span>
+
+</div>
+
+</div>
+
+<div class="col-auto">
+
+<i class="far fa-clock fa-2x text-primary"></i>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<!--<div class="col-xl-3 col-md-6 mb-4">  
+	<div class="card h-100">   
+		<div class="card-body">  
+			<div class="row align-items-center">   
+				<div class="col mr-2">  
+					<div class="text-xs font-weight-bold text-uppercase mb-1">Info</div>  
+					<div class="h5 mb-0 font-weight-bold text-gray-800">Time</div>  
+					<span class="text-success mr-2"><i class="fa fa-arrow-up"></i>  
+						<b id="jam">00:00:00 </b><br></span> 
+					<div class="mt-2 mb-0 text-muted text-xs">  
+					</div>  
+				</div>  
+				<div class="col-auto">  
+				</div>  
+			</div>  
+		</div> 
+	</div> 
+		</div>		
+
+<div class="col-xl-3 col-md-6 mb-4">
+  <div class="card h-100">
+  <div class="card-body">
+  <div class="row align-items-center">
+  <div class="col mr-2">
+  <div class="text-xs font-weight-bold text-uppercase mb-1">Info</div>
+  <div class="h5 mb-0 font-weight-bold text-gray-800">Menuju Idul Fitri</div>
+  <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 
+  <b id="time">3Hari  6Jam 59Menit 6Detik </b><br></span>
+  <div class="mt-2 mb-0 text-muted text-xs">
+  </div>
+  </div>
+  <div class="col-auto">
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>-->
+<div class="col-xl-3 col-md-6 mb-4">
+
+<div class="card h-100">
+
+<div class="card-body">
+
+<div class="row no-gutters align-items-center">
+
+<div class="col mr-2">
+
+<div class="text-xs font-weight-bold text-uppercase mb-1">Contagem regressiva</div>
+
+<div class="h5 mb-0 font-weight-bold text-gray-800">
+
+<div class="time" id="time">1Dia 1Ou 2Min 20Segundo</div>
+
+</div>
+
+<div class="mt-2 mb-0 text-muted text-xs">
+
+</span>
+
+<span>Em direção ao novo ano</span>
+
+</div>
+
+</div>
+
+<div class="col-auto">
+
+<i class="fas fa-star-and-crescent fa-2x text-primary"></i>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-xl-3 col-md-6 mb-4">
+<div class="card h-100">
+<div class="card-body">
+<div class="row no-gutters align-items-center">
+<div class="col mr-2">
+<div class="text-xs font-weight-bold text-uppercase mb-1">Visitante</div>
+<div class="h5 mb-0 font-weight-bold text-gray-800">
+<div class="visitor" id="visitor">00</div>
+</div>
+<div class="mt-2 mb-0 text-muted text-xs">
+
+</span>
+<span>Este visitante da web</span>
+</div>
+</div>
+<div class="col-auto">
+<i class="fas fa-eye fa-2x text-primary"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+          <!-- Batassss -->
+ <div class="col-xl-4 col-lg-5">
+              <div class="card mb-4">
+              	<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              	<h6 class="m-0 font-weight-bold text-primary">Um pouco de informação</h6>
+                  <div class="dropdown no-arrow">
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                      aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-header">Selecione o período</div>
+                      <a class="dropdown-item" href="#">Hoje</a>
+                      <a class="dropdown-item" href="#">Semana</a>
+                      <a class="dropdown-item" href="#">Este ano</a>
+                    </div>
+                  </div>
+                </div>
+		      <div class="card-body">
+
+		<img src="https://i.ibb.co/84WVRZ8/20211109-062621.jpg" alt="My Life" width="100%" >
+
+			<br><br><p><b>
+
+						AJUDE NO MEU CANAL :<br>🤠 [ Venom Mods ] <a href="https://youtube.com/channel/UCOoc5DOT_M6foZa1jSOI6JQ"><strong> CLIQUE AKI</strong></a> <br> <br>BOT WHATSAPP<br>1. SELF-PUBLIC BOT <a href="https://youtu.be/Ar0UJrTcKqI"><strong>CLIQUE AKI</strong></a><br>2. COMO VIRA DONO <a href="https://youtu.be/WPEMLzXGbfY"><strong>CLIQUE AQUI</strong></a><br><br>
+
+					<p>
+					</b>
+					</p>
+				</div>
+			</div>
+		</div>
+            <!-- Message From Customer-->
+<div class="col-xl-3 col-md-6 mb-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h4 class="card-title text-center">Jogo da velha</h4>
+                    <h6 class="card-title text-center">Ganhe para conseguir Apikey</h6>
+                    <hr>
+          <div class="container1">
+        <div class="play-area">
+        </div>
+        <h21 class="text-center" id="winner"></h21>
+        <button1 onclick="reset_board()">REPETIR</button1>
+    </div>
+    </div>
+    </div>
+    </div>
+<!-- Pie Chart -->
+            
+<!--Row-->
+
+<!--<div class="card-body">
+                  <div class="mb-3">
+                    <div class="small text-gray-500">Hai Mastah Welcome
+                      <div class="small float-right"><b>09-05-2021</b></div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="small text-gray-500">Pemula Stah Jangan Di bully:(
+                      <div class="small float-right"><b>09-05-2021</b></div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="small text-gray-500">Update NSFW&ASUPAN!!!
+                      <div class="small float-right"><b>11-05-2021</b></div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                  </div>
+                  <div class="mb-3">
+                  </div>
+                </div>
+                <div class="card-footer text-center">
+                </div>
+              </div>
+            </div>
+            
+          <!--Row-->
+
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <p>Encontrou um bug? Informe sim!!! : <a href="https://wa.me/qr/ABIMPR2ACOHXK1"
+                  class="btn btn-primary btn-sm" target="_blank"><i class="fas fa-bug"></i>&nbsp;Bug</a></p>
+            </div>
+          </div>
+
+        </div>
+        <!---Container Fluid-->
+      </div>
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; 2021 -
+              <b><a href="https://instagram.com/zee.oneee" target="_blank">Venom</a> .Todos os direitos reservados</b>
+            </span>
+          </div>
+        </div>
+      </footer>
+      <!-- Footer -->
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+   <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="js/ruang-admin.js"></script>
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>  
+</body>
+<script>
+  function getvisitor(){
+              var xhr = new XMLHttpRequest();
+              var url = 'https://api.countapi.xyz/hit/api-venom.herokuapp.com/visits';
+              xhr.onloadend = function(){
+             data = JSON.parse(this.responseText);
+  document.getElementById("visitor").textContent = data.value
+              };
+              xhr.open("GET", url, true);
+              xhr.send();
+  }
+  
+</script>
+<script type="text/javascript">
+// 1 detik = 1000
+window.setTimeout("waktu()",1000);  
+function waktu() {   
+var tanggal = new Date();  
+setTimeout("waktu()",1000);  
+document.getElementById("jam").innerHTML = tanggal.getHours()+":"+tanggal.getMinutes()+":"+tanggal.getSeconds();
+}
+</script>
+<script>
+				// Akhir Hitungan Mundur
+				var countDownDate = new Date("Jan 01, 2022 00:00:00").getTime();
+
+				// Update Hitungan Mundur Setiap 1 Detik
+				var x = setInterval(function() {
+
+					// Mengambil Tanggal Dan Waktu
+					var now = new Date().getTime();
+
+					// Find the distance between now and the count down date
+					var distance = countDownDate - now;
+
+					// Kalkulator Waktu Hari, Jam, Menit, Detik 
+					var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+					var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+					var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+					var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+					// Menampilkan Hasil Di Dalam element Menggunakan id="time"
+					document.getElementById("time").innerHTML = days + "Dia  " + hours + "Hora " + minutes + "Minuto " + seconds + "Segundos ";
+
+					// Ketika countdown timer sudah berakhir Maka Tulisan Berakhir
+					if (distance < 0) {
+						clearInterval(x);
+						document.getElementById("time").innerHTML = "Fim";
+					}
+				}, 1000);
+			</script>
+<script>
+	const player = "O";
+const computer = "X";
+
+let board_full = false;
+let play_board = ["", "", "", "", "", "", "", "", ""];
+
+const board_container = document.querySelector(".play-area");
+
+const winner_statement = document.getElementById("winner");
+
+check_board_complete = () => {
+  let flag = true;
+  play_board.forEach(element => {
+    if (element != player && element != computer) {
+      flag = false;
+    }
+  });
+  board_full = flag;
+};
+
+
+const check_line = (a, b, c) => {
+  return (
+    play_board[a] == play_board[b] &&
+    play_board[b] == play_board[c] &&
+    (play_board[a] == player || play_board[a] == computer)
+  );
+};
+
+const check_match = () => {
+  for (i = 0; i < 9; i += 3) {
+    if (check_line(i, i + 1, i + 2)) {
+      document.querySelector(`#block_${i}`).classList.add("win");
+      document.querySelector(`#block_${i + 1}`).classList.add("win");
+      document.querySelector(`#block_${i + 2}`).classList.add("win");
+      return play_board[i];
+    }
+  }
+  for (i = 0; i < 3; i++) {
+    if (check_line(i, i + 3, i + 6)) {
+      document.querySelector(`#block_${i}`).classList.add("win");
+      document.querySelector(`#block_${i + 3}`).classList.add("win");
+      document.querySelector(`#block_${i + 6}`).classList.add("win");
+      return play_board[i];
+    }
+  }
+  if (check_line(0, 4, 8)) {
+    document.querySelector("#block_0").classList.add("win");
+    document.querySelector("#block_4").classList.add("win");
+    document.querySelector("#block_8").classList.add("win");
+    return play_board[0];
+  }
+  if (check_line(2, 4, 6)) {
+    document.querySelector("#block_2").classList.add("win");
+    document.querySelector("#block_4").classList.add("win");
+    document.querySelector("#block_6").classList.add("win");
+    return play_board[2];
+  }
+  return "";
+};
+
+const check_for_winner = () => {
+  let res = check_match()
+  if (res == player) {
+    winner.innerText = "Você ganhou a chave de API: Api-Venom";
+    winner.classList.add("playerWin");
+    board_full = true
+  } else if (res == computer) {
+    winner.innerText = "você perde para o computador:v";
+    winner.classList.add("computerWin");
+    board_full = true
+  } else if (board_full) {
+    winner.innerText = "Empate!";
+    winner.classList.add("draw");
+  }
+};
+
+
+const render_board = () => {
+  board_container.innerHTML = ""
+  play_board.forEach((e, i) => {
+    board_container.innerHTML += `<div id="block_${i}" class="block" onclick="addPlayerMove(${i})">${play_board[i]}</div>`
+    if (e == player || e == computer) {
+      document.querySelector(`#block_${i}`).classList.add("occupied");
+    }
+  });
+};
+
+const game_loop = () => {
+  render_board();
+  check_board_complete();
+  check_for_winner();
+}
+
+const addPlayerMove = e => {
+  if (!board_full && play_board[e] == "") {
+    play_board[e] = player;
+    game_loop();
+    addComputerMove();
+  }
+};
+
+const addComputerMove = () => {
+  if (!board_full) {
+    do {
+      selected = Math.floor(Math.random() * 9);
+    } while (play_board[selected] != "");
+    play_board[selected] = computer;
+    game_loop();
+  }
+};
+
+const reset_board = () => {
+  play_board = ["", "", "", "", "", "", "", "", ""];
+  board_full = false;
+  winner.classList.remove("playerWin");
+  winner.classList.remove("computerWin");
+  winner.classList.remove("draw");
+  winner.innerText = "";
+  render_board();
+};
+
+//initial render
+render_board();
+</script>
+
+</html>
